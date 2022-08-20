@@ -1,9 +1,9 @@
 'use strict'
 
-var express = require("express");
-var bodyparser = require("body-parser");
-
+const express = require("express");
+const bodyparser = require("body-parser");
 const app = express()
+const router = require("./routes/routes");
 
 //cargar archivos y rutas
 // var Archivos_routes= require("./routes/Rutaarchivos")
@@ -25,14 +25,14 @@ app.use((req, res, next) => {
 
 // rutas de consumo de los metodos http o apis en posmant valida
 
-// app.use('/ini');
+app.use('/ini',router);
 
-app.get('/test',(req,res)=>{
-    res.status(200).send({
-        message: "Api rest"
-    })
+// app.get('/test',(req,res)=>{
+//     res.status(200).send({
+//         message: "Api rest"
+//     })
 
-});
+// });
 
 // app.get('/',(req,res)=>{
 //     res.status(200).send({
